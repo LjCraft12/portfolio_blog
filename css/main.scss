@@ -1,8 +1,11 @@
 @import "normalize";
-$border: #E9E9E9;
-$dark: #424652;
-$light: #2f4f4f;
+
+
+$border:     #E9E9E9;
+$dark:       #424652;
+$light:      #2f4f4f;
 $hightlight: #00BEFF;
+$white:      #ffffff;
 
 * {
   -webkit-box-sizing: border-box;
@@ -16,6 +19,12 @@ body {
 
 .wrapper {
   width: 90%;
+  margin: 0 auto;
+}
+
+.skinny_wrapper {
+  width: 80%;
+  max-width: 750px;
   margin: 0 auto;
 }
 
@@ -44,6 +53,7 @@ h1 {
 h2 {
   font-size: 2rem;
 }
+
 h3 {
   font-size: 1.75rem;
 }
@@ -68,6 +78,16 @@ p, li {
 p, ul, ol {
   margin: 0 0 1.6em 0;
 }
+
+hr {
+  width: 3.5em;
+  display: block;
+  height: 2.5px;
+  border: 0;
+  border-top: 2px solid $hightlight;
+  margin: 2rem 0;
+}
+
 #top_navigation {
   padding: 2em 5%;
   border-bottom: 2px solid $border;
@@ -76,10 +96,10 @@ p, ul, ol {
     font-size: .8em;
     letter-spacing: 4px;
     text-transform: uppercase;
-    border: 2px solid darken( $border, 15 );
+    border: 2px solid darken($border, 15);
     padding: 1rem;
     text-decoration: none;
-    color: darken( $dark, 40 );
+    color: darken($dark, 40);
   }
   nav {
     float: right;
@@ -95,11 +115,11 @@ p, ul, ol {
 }
 
 #page_title {
-  font-weight: 400;
   text-align: center;
   border-bottom: 1px solid $border;
   text-transform: uppercase;
   padding: 2.5em 0;
+  font-size: 1rem;
 }
 
 #main_footer {
@@ -117,10 +137,11 @@ p, ul, ol {
       margin-left: 1em;
       padding-top: .2em;
       &:hover {
-      color: $hightlight;
-    }
+        color: $hightlight;
+      }
     }
   }
 }
 
 @import "welcome";
+@import "post_projects";

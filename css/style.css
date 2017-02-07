@@ -414,6 +414,11 @@ body {
   width: 90%;
   margin: 0 auto; }
 
+.skinny_wrapper {
+  width: 80%;
+  max-width: 750px;
+  margin: 0 auto; }
+
 .wrapper-padding {
   padding: 4rem; }
 
@@ -453,6 +458,14 @@ p, li {
 p, ul, ol {
   margin: 0 0 1.6em 0; }
 
+hr {
+  width: 3.5em;
+  display: block;
+  height: 2.5px;
+  border: 0;
+  border-top: 2px solid #00BEFF;
+  margin: 2rem 0; }
+
 #top_navigation {
   padding: 2em 5%;
   border-bottom: 2px solid #E9E9E9; }
@@ -476,11 +489,11 @@ p, ul, ol {
       font-size: 1rem; }
 
 #page_title {
-  font-weight: 400;
   text-align: center;
   border-bottom: 1px solid #E9E9E9;
   text-transform: uppercase;
-  padding: 2.5em 0; }
+  padding: 2.5em 0;
+  font-size: 1rem; }
 
 #main_footer {
   padding: 2.5em 5%;
@@ -517,13 +530,6 @@ li, a {
 .homepage_content h2 {
   font-size: 1.2rem;
   text-transform: uppercase; }
-.homepage_content hr {
-  width: 3.5em;
-  display: block;
-  height: 2.5px;
-  border: 0;
-  border-top: 2px solid #00BEFF;
-  margin: 2rem 0; }
 .homepage_content h3 {
   font-size: 1.45em;
   font-weight: 400;
@@ -532,5 +538,60 @@ li, a {
   margin: 0 0 .75em 0; }
 .homepage_content .about {
   padding: 0 7.5% 0 0; }
+
+#post_wrapper {
+  padding: 3em 0; }
+  #post_wrapper .post h2 {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase; }
+    #post_wrapper .post h2 a {
+      color: #424652; }
+      #post_wrapper .post h2 a:hover {
+        color: #00BEFF; }
+  #post_wrapper .post .link {
+    text-align: center;
+    margin-top: -1em; }
+    #post_wrapper .post .link a {
+      color: #424652; }
+      #post_wrapper .post .link a:hover {
+        color: #00BEFF; }
+  #post_wrapper .post hr {
+    margin: 3em auto; }
+
+.pagination:before,
+.pagination:after {
+  content: " ";
+  display: table; }
+
+.pagination:after {
+  clear: both; }
+
+.pagination {
+  text-align: center;
+  margin: 0 0 1.5em 0; }
+  .pagination a, .pagination .previous_page, .pagination .current, .pagination .next_page {
+    padding: .75em 1em;
+    margin: 0 .25em;
+    border-radius: .15em;
+    line-height: 20px;
+    text-decoration: none;
+    background: #ffffff;
+    font-weight: 500;
+    font-size: .75em;
+    font-style: normal;
+    color: #424652; }
+    .pagination a:hover, .pagination .previous_page:hover, .pagination .current:hover, .pagination .next_page:hover {
+      background-color: #00BEFF;
+      color: #ffffff; }
+  .pagination .current {
+    background: #00BEFF;
+    color: #ffffff; }
+  .pagination .disabled {
+    color: #c0c0c0; }
+    .pagination .disabled:hover {
+      color: #c0c0c0;
+      background: #ffffff; }
 
 /*# sourceMappingURL=style.css.map */
