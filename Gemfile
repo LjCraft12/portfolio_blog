@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 
 # gem 'pygments.rb', '~> 1.1'
 gem 'redcarpet', '~> 3.4'
+gem 'friendly_id', '~> 5.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
