@@ -24,10 +24,9 @@
   <div class="col-3 homepage_content">
     <h2>Resources</h2>
     <hr>
-    <ul>
-      <li><a href="https://generalassemb.ly/" target="_blank">General Assembly</a></li>
-      <li><a href="https://www.freecodecamp.com" target="_blank">Free Code Camp</a></li>
-      <li><a href="https://www.udemy.com" target="_blank">Udemy</a></li>
-    </ul>
+    <% @projects.each do |project| %>
+        <h3><a href="#"><%= link_to project.title, project %></h3>
+        <p class="date"><%= project.created_at.strftime("%A, %b, %d") %></p>
+    <% end %>
   </div>
 </div>
