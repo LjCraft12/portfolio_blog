@@ -21,11 +21,7 @@ gem 'redcarpet', '~> 3.4'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-end
-
-group :development do
   gem 'sqlite3'
-  gem 'web-console', '>= 3.3.0'
 end
 
 group :production do
