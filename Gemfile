@@ -15,10 +15,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-
-# gem 'pygments.rb', '~> 1.1'
+gem 'pygments.rb', '~> 1.1.1'
 gem 'redcarpet', '~> 3.4'
 gem 'friendly_id', '~> 5.2'
+gem 'will_paginate', '~> 3.1.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
