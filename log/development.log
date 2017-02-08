@@ -5191,3 +5191,952 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 222ms (Views: 181.3ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProjects (20170208193948)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "link" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170208193948"]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_type' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_slug' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-02-08 16:15:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 1748ms (Views: 1616.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 16:15:33 -0500
+Started GET "/projects" for 127.0.0.1 at 2017-02-08 16:15:33 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 277ms (Views: 247.8ms | ActiveRecord: 0.0ms)
+
+
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `oreder' for #<ActiveRecord::Relation []>
+Did you mean?  order
+               order!):
+  
+app/controllers/projects_controller.rb:3:in `index'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1377.9ms)
+Started GET "/projects" for 127.0.0.1 at 2017-02-08 16:15:47 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY created_at desc[0m
+  Rendered projects/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 215ms (Views: 175.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-08 16:15:50 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (69.7ms)
+Completed 200 OK in 276ms (Views: 238.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-08 16:15:51 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 224ms (Views: 194.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-08 16:15:52 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 225ms (Views: 186.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-02-08 16:15:57 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY created_at desc[0m
+  Rendered projects/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 203ms (Views: 171.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2017-02-08 16:34:31 -0500
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 232ms (Views: 181.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2017-02-08 16:41:31 -0500
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (211.3ms)
+  Rendered projects/new.html.erb within layouts/application (244.4ms)
+Completed 500 Internal Server Error in 361ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `project' for #<#<Class:0x0000000b397e60>:0x0000000cbc0460>
+Did you mean?  @project):
+    1: <%= form_for project do |f| %>
+    2:     <% if @project.errors.any? %>
+    3:         <h2><%= pluralize(project.errors.count, "error") %> prevented this project from saving:</h2>
+    4:         <ul>
+  
+app/views/projects/_form.html.erb:1:in `_app_views_projects__form_html_erb__745531156_106873120'
+app/views/projects/new.html.erb:4:in `_app_views_projects_new_html_erb__1248238074_106825500'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1273.9ms)
+Started GET "/projects/new" for 127.0.0.1 at 2017-02-08 16:42:20 -0500
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (84.3ms)
+  Rendered projects/new.html.erb within layouts/application (114.9ms)
+Completed 200 OK in 327ms (Views: 295.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2017-02-08 16:42:31 -0500
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (4.0ms)
+  Rendered projects/new.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 247ms (Views: 215.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2017-02-08 16:48:45 -0500
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xXRv0qEbMAv7qg8St72ZKc9JMZsd3bmNRjcFFSFxS0IP8LSYjwPTXfqqFwzxPfP9IJvRpafv0rcFWVvMy03LGA==", "project"=>{"title"=>"asdsd", "description"=>"asdsad", "link"=>"asdsad"}, "commit"=>"Create Project"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.5ms)[0m  [1m[32mINSERT INTO "projects" ("title", "description", "link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "asdsd"], ["description", "asdsad"], ["link", "asdsad"], ["created_at", 2017-02-08 21:48:45 UTC], ["updated_at", 2017-02-08 21:48:45 UTC]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 53ms (ActiveRecord: 21.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-02-08 16:48:45 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 246ms (Views: 176.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-02-08 16:51:25 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 233ms (Views: 180.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/asdsad" for 127.0.0.1 at 2017-02-08 16:51:27 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"asdsad"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Project with 'id'=asdsad):
+  
+app/controllers/projects_controller.rb:29:in `find_project'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1253.8ms)
+Started GET "/projects/asdsad" for 127.0.0.1 at 2017-02-08 16:51:31 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"asdsad"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Project with 'id'=asdsad):
+  
+app/controllers/projects_controller.rb:29:in `find_project'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1254.1ms)
+Started GET "/projects/1" for 127.0.0.1 at 2017-02-08 16:54:00 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (2.5ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___293509691_105431880 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___293509691_105431880 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___293509691_105431880 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___293509691_105431880 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___293509691_105431880 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___293509691_105431880 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___293509691_105431880 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___293509691_105431880 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+Completed 200 OK in 764ms (Views: 730.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-02-08 17:06:46 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (2.8ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___293509691_102757320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___293509691_102757320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___293509691_102757320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___293509691_102757320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___293509691_102757320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___293509691_102757320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___293509691_102757320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___293509691_102757320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+Completed 200 OK in 699ms (Views: 662.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:14:24 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 250ms (Views: 211.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:14:26 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 197ms (Views: 167.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-08 17:14:29 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 207ms (Views: 175.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contact.html" for 127.0.0.1 at 2017-02-08 17:14:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/contact.html"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (9.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1759.7ms)
+Started GET "/posts" for 127.0.0.1 at 2017-02-08 17:14:35 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 223ms (Views: 187.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:14:37 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 219ms (Views: 187.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:14:40 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 202ms (Views: 171.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contact.html" for 127.0.0.1 at 2017-02-08 17:14:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/contact.html"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (9.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1681.7ms)
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:14:48 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 207ms (Views: 175.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:25:56 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"projects"} missing required keys: [:id]):
+    17:   <%= link_to "Perry Leon Craft jr.", root_path, class: "name" %>
+    18:   <nav>
+    19:     <%= link_to "Articles", posts_path %>
+    20:     <%= link_to "Projects", project_path %>
+    21:     <a href="contact.html">Contact</a>
+    22:   </nav>
+    23: </header>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb___293509691_108967640'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1265.8ms)
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:26:00 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"projects"} missing required keys: [:id]):
+    17:   <%= link_to "Perry Leon Craft jr.", root_path, class: "name" %>
+    18:   <nav>
+    19:     <%= link_to "Articles", posts_path %>
+    20:     <%= link_to "Projects", project_path %>
+    21:     <a href="contact.html">Contact</a>
+    22:   </nav>
+    23: </header>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb___293509691_53136700'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1259.6ms)
+Started GET "/posts" for 127.0.0.1 at 2017-02-08 17:26:03 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"projects"} missing required keys: [:id]):
+    17:   <%= link_to "Perry Leon Craft jr.", root_path, class: "name" %>
+    18:   <nav>
+    19:     <%= link_to "Articles", posts_path %>
+    20:     <%= link_to "Projects", project_path %>
+    21:     <a href="contact.html">Contact</a>
+    22:   </nav>
+    23: </header>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb___293509691_97710840'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1262.7ms)
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:26:07 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"projects"} missing required keys: [:id]):
+    17:   <%= link_to "Perry Leon Craft jr.", root_path, class: "name" %>
+    18:   <nav>
+    19:     <%= link_to "Articles", posts_path %>
+    20:     <%= link_to "Projects", project_path %>
+    21:     <a href="contact.html">Contact</a>
+    22:   </nav>
+    23: </header>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb___293509691_101584900'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1289.6ms)
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:26:13 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"projects"} missing required keys: [:id]):
+    17:   <%= link_to "Perry Leon Craft jr.", root_path, class: "name" %>
+    18:   <nav>
+    19:     <%= link_to "Articles", posts_path %>
+    20:     <%= link_to "Projects", project_path %>
+    21:     <a href="contact.html">Contact</a>
+    22:   </nav>
+    23: </header>
+  
+app/views/layouts/application.html.erb:20:in `_app_views_layouts_application_html_erb___293509691_105172580'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1269.4ms)
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:26:33 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 225ms (Views: 192.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-02-08 17:26:35 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY created_at desc[0m
+  Rendered projects/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 212ms (Views: 181.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-02-08 17:30:17 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY created_at desc[0m
+  Rendered projects/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 213ms (Views: 179.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:30:19 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (39.8ms)
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    24:   <div class="col-3 homepage_content">
+    25:     <h2>Resources</h2>
+    26:     <hr>
+    27:     <% @porjects.each do |porject| %>
+    28:         <h3><a href="#"><%= link_to porject.title, porject %></h3>
+    29:         <p class="date"><%= porject.created_at.strftime("%A, %b, %d") %></p>
+    30:     <% end %>
+  
+app/views/welcome/index.html.erb:27:in `_app_views_welcome_index_html_erb__424566683_40881200'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1279.7ms)
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:33:13 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (45.7ms)
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    24:   <div class="col-3 homepage_content">
+    25:     <h2>Resources</h2>
+    26:     <hr>
+    27:     <% @projects.each do |project| %>
+    28:         <h3><a href="#"><%= link_to project.title, project %></h3>
+    29:         <p class="date"><%= project.created_at.strftime("%A, %b, %d") %></p>
+    30:     <% end %>
+  
+app/views/welcome/index.html.erb:27:in `_app_views_welcome_index_html_erb__424566683_100731160'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1285.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:34:40 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 256ms (Views: 204.4ms | ActiveRecord: 3.0ms)
+
+
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSlugToProjects (20170208223730)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.6ms)[0m  [1m[35mALTER TABLE "projects" ADD "slug" varchar[0m
+  [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_projects_on_slug" ON "projects" ("slug")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170208223730"]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_type' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_slug_and_sluggable_type' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_friendly_id_slugs_on_sluggable_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_slug' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projects_on_slug' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projects_on_slug' AND type='index'
+[0m
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" WHERE ("projects"."id" != 1) AND "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  [1m[35mSQL (5.1ms)[0m  [1m[33mUPDATE "projects" SET "slug" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["slug", "asdsd"], ["updated_at", 2017-02-08 22:43:12 UTC], ["id", 1]]
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/projects/1" for 127.0.0.1 at 2017-02-08 17:43:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "1"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 251ms (Views: 193.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:43:20 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 281ms (Views: 240.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects/asdsd" for 127.0.0.1 at 2017-02-08 17:43:22 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"asdsd"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 206ms (Views: 171.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/asdsd/edit" for 127.0.0.1 at 2017-02-08 17:48:14 -0500
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"asdsd"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (6.0ms)
+  Rendered projects/edit.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 285ms (Views: 226.5ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/projects/asdsd" for 127.0.0.1 at 2017-02-08 17:48:30 -0500
+Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GBsZhDangKliMaWLcKfFMrZu6iUF5anP4luOzZh/k/nSn8LOGL9j/2MxvZU2J6/mWbwKG7/XwvWhNdAUckMTow==", "project"=>{"title"=>"asdsd", "description"=>"This is my shit and you know it!", "link"=>"www.youtube.com"}, "commit"=>"Update Project", "id"=>"asdsd"}
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "projects" SET "description" = ?, "link" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["description", "This is my shit and you know it!"], ["link", "www.youtube.com"], ["updated_at", 2017-02-08 22:48:30 UTC], ["id", 1]]
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/projects/asdsd
+Completed 302 Found in 39ms (ActiveRecord: 18.1ms)
+
+
+Started GET "/projects/asdsd" for 127.0.0.1 at 2017-02-08 17:48:30 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"asdsd"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 222ms (Views: 186.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/www.youtube.com" for 127.0.0.1 at 2017-02-08 17:48:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/projects/www.youtube.com"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (9.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1732.5ms)
+Started GET "/projects/asdsd/edit" for 127.0.0.1 at 2017-02-08 17:48:54 -0500
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"asdsd"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (4.0ms)
+  Rendered projects/edit.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 245ms (Views: 211.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/projects/asdsd" for 127.0.0.1 at 2017-02-08 17:49:04 -0500
+Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dD9gnKDZNtCFAA4c8KtG3llixhs/ppZI38JbEh+IJT++u7vWjsHVhoQAFgK2KywKtrAmJYWU/XKcrAXL9bSlZQ==", "project"=>{"title"=>"asdsd", "description"=>"This is my shit and you know it!", "link"=>"https://www.youtube.com"}, "commit"=>"Update Project", "id"=>"asdsd"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "projects" SET "link" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["link", "https://www.youtube.com"], ["updated_at", 2017-02-08 22:49:04 UTC], ["id", 1]]
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/projects/asdsd
+Completed 302 Found in 29ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/projects/asdsd" for 127.0.0.1 at 2017-02-08 17:49:04 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"asdsd"}
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 214ms (Views: 179.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/asdsdedit" for 127.0.0.1 at 2017-02-08 17:49:27 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"asdsdedit"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsdedit"], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (can't find record with friendly id: "asdsdedit"):
+  
+app/controllers/projects_controller.rb:43:in `find_project'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1331.1ms)
+Started GET "/projects/asdsd/edit" for 127.0.0.1 at 2017-02-08 17:49:31 -0500
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"asdsd"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (9.0ms)
+  Rendered projects/edit.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 278ms (Views: 242.7ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/projects/asdsd" for 127.0.0.1 at 2017-02-08 17:49:42 -0500
+Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c9aADbdYHvgO1OKyKYqycPxISCdac6YEmnw9msmfZOe5UltHmUD9rg/U+qxvCtikE5qoGeBBzT7ZEmNDI6PkvQ==", "project"=>{"title"=>"asdsd", "description"=>"This is my shit and you know it\r\n## Y Es\r\n!", "link"=>"https://www.youtube.com"}, "commit"=>"Update Project", "id"=>"asdsd"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.5ms)[0m  [1m[33mUPDATE "projects" SET "description" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["description", "This is my shit and you know it\r\n## Y Es\r\n!"], ["updated_at", 2017-02-08 22:49:42 UTC], ["id", 1]]
+  [1m[35m (18.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/projects/asdsd
+Completed 302 Found in 39ms (ActiveRecord: 24.1ms)
+
+
+Started GET "/projects/asdsd" for 127.0.0.1 at 2017-02-08 17:49:42 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"asdsd"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 221ms (Views: 184.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/asdsd" for 127.0.0.1 at 2017-02-08 17:56:47 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"asdsd"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 254ms (Views: 196.2ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/projects/asdsd" for 127.0.0.1 at 2017-02-08 17:56:51 -0500
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KcYvUH9dfUtxHoRuoVtFu3LkW3VTkiQeUtsKVil4kLzjQvQaUUWeHXAenHDn2y9vnTa7S+mgTyQRtVSPw0QQ5g==", "id"=>"asdsd"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "asdsd"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.5ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 1]]
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 31ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-02-08 17:56:51 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY created_at desc[0m
+  Rendered projects/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 200ms (Views: 167.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-02-08 17:56:53 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY created_at desc[0m
+  Rendered projects/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 220ms (Views: 188.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:56:55 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 244ms (Views: 205.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-08 17:56:56 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 223ms (Views: 191.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts?page=2" for 127.0.0.1 at 2017-02-08 17:56:58 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  Rendered posts/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 220ms (Views: 188.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-08 17:57:02 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 232ms (Views: 198.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-08 17:57:03 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 211ms (Views: 177.0ms | ActiveRecord: 1.0ms)
+
+
