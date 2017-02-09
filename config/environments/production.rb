@@ -82,7 +82,7 @@ Rails.application.configure do
   end
 
 
-  config.action.mailer.default_url_options = { host: 'https://vast-caverns-53510.herokuapp.com'}
+  config.action.mailer.default_url_options = { host: 'https://calm-bastion-79927.herokuapp.com/'}
   config.action_mailer.delivery_method = :smtp
 
   ActionMailer::Base.smtp_settings = {
