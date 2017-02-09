@@ -19,6 +19,7 @@ gem 'pygments.rb', '~> 1.1.1'
 gem 'redcarpet', '~> 3.4'
 gem 'friendly_id', '~> 5.2'
 gem 'will_paginate', '~> 3.1.1'
+gem 'mail_form', '~> 1.6'
 
 group :development, :test do
   gem 'byebug', platform: :mri
