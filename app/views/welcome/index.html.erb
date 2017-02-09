@@ -14,7 +14,7 @@
       there or follow my Instagram and Facebook to see what crazy things I post throughout the day.</p>
   </div>
   <div class="col-2 about homepage_content">
-    <h2>Projects I have done.</h2>
+    <h2>Articles</h2>
     <hr>
     <% @posts.each do |post| %>
         <h3><a href="#"><%= link_to post.title, post %></h3>
@@ -22,7 +22,7 @@
     <% end %>
   </div>
   <div class="col-3 homepage_content">
-    <h2>Resources</h2>
+    <h2>Projects I've worked on</h2>
     <hr>
     <% @projects.each do |project| %>
         <h3><a href="#"><%= link_to project.title, project %></h3>
