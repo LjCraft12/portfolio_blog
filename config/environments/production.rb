@@ -83,7 +83,7 @@ Rails.application.configure do
 
 
   config.action.mailer.default_url_options = { host: 'https://calm-bastion-79927.herokuapp.com/'}
-  config.action_mailer.delivery_method = :smtp
+  config.action.mailer.delivery_method = :smtp
 
   ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.sendgrid.net',
