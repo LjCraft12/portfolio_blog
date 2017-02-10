@@ -188,6 +188,10 @@ input[type="submit"], .button {
   text-align: center;
 }
 
+.new_user_sign_up {
+  color: red;
+}
+
 @import "welcome";
 @import "post_projects";
 @import "pygments";
