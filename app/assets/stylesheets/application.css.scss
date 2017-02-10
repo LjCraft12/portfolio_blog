@@ -1,6 +1,7 @@
 @import "normalize";
 
 
+
 $border:     #E9E9E9;
 $dark:       #424652;
 $light:      #2f4f4f;
@@ -118,6 +119,17 @@ a {
 }
 }
 
+.alert, .notice {
+  padding:1em 0;
+  margin-top: 1em;
+  color: $dark;
+  text-align: center;
+  font-weight: 700;
+  font-size: .8em;
+  text-decoration: none;
+  border-bottom: 1.5px solid $border;
+}
+
 #page_title {
     text-align: center;
     border-bottom: 1px solid $border;
@@ -192,6 +204,12 @@ input[type="submit"], .button {
   color: red;
 }
 
+.create_article_post {
+  color: $dark;
+  padding: 0 0 1em 1em;
+}
+
 @import "welcome";
 @import "post_projects";
 @import "pygments";
+@import "animate";
