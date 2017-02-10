@@ -20,6 +20,9 @@ gem 'redcarpet', '~> 3.4'
 gem 'friendly_id', '~> 5.2'
 gem 'will_paginate', '~> 3.1.1'
 gem 'mail_form', '~> 1.6'
+gem 'sendgrid-ruby'
+gem 'devise', '~> 4.2'
+gem 'bcrypt', platforms: :ruby
 
 group :development, :test do
   gem 'byebug', platform: :mri
