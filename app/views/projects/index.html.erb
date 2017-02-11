@@ -1,11 +1,13 @@
-<h1 id="page_title" class="animated slideInDown">Projects I have worked on</h1>
+<h1 id="page_title">Projects I have worked on</h1>
 <div id="post_wrapper" class="skinny_wrapper">
   <% @projects.each do |project| %>
-      <div class="post animated slideInDown">
+      <div class="post">
         <p class="date"><%= project.created_at.strftime('%e %b %Y %H:%M:%S%p') %></p>
         <h2><a href="#"><%= link_to project.title, project %></a></h2>
         <hr>
       </div>
   <% end %>
+  <%= will_paginate @project %>
+
   <%= link_to "Create new projeject", new_project_path %>
 </div>
