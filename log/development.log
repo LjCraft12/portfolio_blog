@@ -5970,3 +5970,547 @@ Processing by ProjectsController#show as HTML
 Completed 200 OK in 296ms (Views: 250.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:17:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (70.6ms)
+Completed 200 OK in 945ms (Views: 858.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:18:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (56.1ms)
+Completed 200 OK in 893ms (Views: 812.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-02-11 01:19:18 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 331ms (Views: 298.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/this-will-paginate-the-pages" for 127.0.0.1 at 2017-02-11 01:19:20 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"this-will-paginate-the-pages"}
+  [1m[36mProject Load (15.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "this-will-paginate-the-pages"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 275ms (Views: 226.7ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 01:19:24 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 345ms (Views: 323.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-11 01:19:26 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZZsdiGopSy+It160xCAeuaoAFx2D2LfQkyRYzBczEeSl7kpiqWw6pR4zHP26Ciaa9qmckzkkql7WrKQC0OSY2Q==", "user"=>{"email"=>"LjCraft12@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ljcraft12@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-11 06:19:26 UTC], ["last_sign_in_at", 2017-02-11 06:10:52 UTC], ["sign_in_count", 16], ["updated_at", 2017-02-11 06:19:26 UTC], ["id", 1]]
+  [1m[35m (20.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 616ms (ActiveRecord: 24.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:19:27 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (4.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 232.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/projects/this-will-paginate-the-pages" for 127.0.0.1 at 2017-02-11 01:19:30 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"this-will-paginate-the-pages"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "this-will-paginate-the-pages"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 239ms (Views: 203.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/this-will-paginate-the-pages" for 127.0.0.1 at 2017-02-11 01:22:44 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"this-will-paginate-the-pages"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "this-will-paginate-the-pages"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 279ms (Views: 242.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-11 01:26:32 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (16.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 358ms (Views: 316.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/asdsads" for 127.0.0.1 at 2017-02-11 01:26:34 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"asdsads"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "asdsads"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_disqus.html.erb (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 288ms (Views: 256.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:40:24 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (16.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 293ms (Views: 240.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:41:47 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (4.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (12.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_108202620 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_108202620 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_108202620 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_108202620 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_108202620 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_108202620 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_108202620 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_108202620 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2158ms (Views: 2112.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/posts/asdsads" for 127.0.0.1 at 2017-02-11 01:41:56 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"asdsads"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "asdsads"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_disqus.html.erb (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 352ms (Views: 316.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/asdsads" for 127.0.0.1 at 2017-02-11 01:42:00 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"asdsads"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "asdsads"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_disqus.html.erb (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 308ms (Views: 265.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/asdsads" for 127.0.0.1 at 2017-02-11 01:42:27 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"asdsads"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "asdsads"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_disqus.html.erb (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (48.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_127707780 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_127707780 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_127707780 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_127707780 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_127707780 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_127707780 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_127707780 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_127707780 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+Completed 200 OK in 1621ms (Views: 1588.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:42:32 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 308ms (Views: 276.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:42:33 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 320ms (Views: 279.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:42:43 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (12.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 285ms (Views: 254.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:42:55 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (8.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_138419320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_138419320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_138419320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_138419320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_138419320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_138419320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_138419320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_138419320 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1677ms (Views: 1647.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:43:31 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (13.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_91792000 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_91792000 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_91792000 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_91792000 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_91792000 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_91792000 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_91792000 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_91792000 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1882ms (Views: 1850.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:43:46 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (16.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_143637640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_143637640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_143637640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_143637640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_143637640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_143637640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_143637640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_143637640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1908ms (Views: 1873.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:43:49 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (10.5ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 300ms (Views: 269.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:44:05 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (19.5ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_93171460 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_93171460 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_93171460 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_93171460 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_93171460 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_93171460 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_93171460 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_93171460 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1815ms (Views: 1768.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:44:33 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (8.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_110388640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_110388640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_110388640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_110388640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_110388640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_110388640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_110388640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_110388640 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1571ms (Views: 1544.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:44:50 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 264ms (Views: 229.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:44:52 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (16.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 284ms (Views: 246.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:45:08 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (12.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_135443760 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_135443760 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_135443760 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_135443760 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_135443760 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_135443760 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_135443760 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_135443760 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1900ms (Views: 1866.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:45:22 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (4.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 266ms (Views: 233.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:45:50 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 304ms (Views: 267.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:46:03 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (12.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 246ms (Views: 218.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:46:26 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (12.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 324ms (Views: 278.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:46:44 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (12.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 304ms (Views: 264.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:47:08 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (16.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_147625020 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_147625020 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_147625020 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_147625020 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_147625020 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_147625020 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_147625020 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_147625020 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1661ms (Views: 1618.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:47:21 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (9.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_134999340 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_134999340 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_134999340 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_134999340 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_134999340 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_134999340 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_134999340 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_134999340 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1934ms (Views: 1903.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:48:13 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (12.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_144517340 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+Completed 500 Internal Server Error in 377ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$hightlight".):
+    4:   <title>Blog</title>
+    5:   <%= csrf_meta_tags %>
+    6: 
+    7:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800" rel="stylesheet">
+   10:   <title>Perry Craft | Full time learner, part time developer?</title>
+  
+app/assets/stylesheets/application.css.scss:92
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___688375739_144517340'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1381.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:48:40 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (12.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_139200580 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+Completed 500 Internal Server Error in 452ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$hightlight".):
+    4:   <title>Blog</title>
+    5:   <%= csrf_meta_tags %>
+    6: 
+    7:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800" rel="stylesheet">
+   10:   <title>Perry Craft | Full time learner, part time developer?</title>
+  
+app/assets/stylesheets/application.css.scss:92
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___688375739_139200580'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.6ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1290.7ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:49:05 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (11.5ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_89441120 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_89441120 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_89441120 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_89441120 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_89441120 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_89441120 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_89441120 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_89441120 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1682ms (Views: 1649.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:49:38 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (12.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_167455960 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_167455960 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_167455960 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_167455960 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_167455960 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_167455960 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_167455960 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_167455960 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1761ms (Views: 1726.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:51:35 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (10.8ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_135508480 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_135508480 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_135508480 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_135508480 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_normalize.scss. (called from _app_views_layouts_application_html_erb___688375739_135508480 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_welcome.scss. (called from _app_views_layouts_application_html_erb___688375739_135508480 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/_post_projects.scss. (called from _app_views_layouts_application_html_erb___688375739_135508480 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.css.scss to C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/assets/stylesheets/pygments.scss. (called from _app_views_layouts_application_html_erb___688375739_135508480 at C:/Users/Perry Craft/Documents/GitHub/sandbox/rails/portfolio_blog/app/views/layouts/application.html.erb:7)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1886ms (Views: 1841.4ms | ActiveRecord: 0.5ms)
+
+

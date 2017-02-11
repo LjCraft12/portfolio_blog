@@ -9,7 +9,7 @@
       a {
         color: $dark;
         &:hover {
-          color: $hightlight;
+          color: $highlight;
         }
       }
     }
@@ -20,7 +20,7 @@
       a {
         color: $dark;
         &:hover {
-          color: $hightlight;
+          color: $highlight;
         }
       }
     }
@@ -63,7 +63,7 @@
     color: $dark;
     padding: 1em 1.5em;
     &:hover {
-      color: $hightlight;
+      color: $highlight;
       cursor: pointer;
     }
   }
@@ -112,12 +112,12 @@
     font-style: normal;
     color: $dark;
     &:hover {
-      background-color: $hightlight;
+      background-color: $highlight;
       color: $white;
     }
   }
   .current {
-    background: $hightlight;
+    background: $highlight;
     color: $white;
   }
   .disabled {
