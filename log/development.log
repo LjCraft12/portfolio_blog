@@ -5786,3 +5786,187 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 249ms (Views: 229.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:10:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (112.1ms)
+Completed 200 OK in 1710ms (Views: 1568.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-11 01:10:30 -0500
+Started GET "/posts/asdsads" for 127.0.0.1 at 2017-02-11 01:10:30 -0500
+Started GET "/posts/spokfpodkfdslkmcdskfmdskf" for 127.0.0.1 at 2017-02-11 01:10:30 -0500
+Started GET "/posts/spokfpodkfdslkmcdskfmdskf" for 127.0.0.1 at 2017-02-11 01:10:30 -0500
+Processing by PostsController#index as HTML
+Processing by PostsController#show as HTML
+Processing by PostsController#show as HTML
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"spokfpodkfdslkmcdskfmdskf"}
+  Parameters: {"id"=>"spokfpodkfdslkmcdskfmdskf"}
+  Parameters: {"id"=>"asdsads"}
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "spokfpodkfdslkmcdskfmdskf"], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "spokfpodkfdslkmcdskfmdskf"], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "asdsads"], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendering posts/show.html.erb within layouts/application
+  Rendering posts/show.html.erb within layouts/application
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_disqus.html.erb (0.0ms)
+  Rendered posts/_disqus.html.erb (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (131.6ms)
+  Rendered posts/_disqus.html.erb (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (80.7ms)
+  Rendered posts/show.html.erb within layouts/application (69.1ms)
+  Rendered posts/index.html.erb within layouts/application (948.5ms)
+Completed 200 OK in 1180ms (Views: 1071.6ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1201ms (Views: 1042.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1217ms (Views: 934.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1444ms (Views: 1421.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/spokfpodkfdslkmcdskfmdskf" for 127.0.0.1 at 2017-02-11 01:10:33 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"spokfpodkfdslkmcdskfmdskf"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "spokfpodkfdslkmcdskfmdskf"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_disqus.html.erb (0.0ms)
+  Rendered posts/show.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 316ms (Views: 272.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-11 01:10:39 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 261ms (Views: 227.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/spokfpodkfdslkmcdskfmdskf" for 127.0.0.1 at 2017-02-11 01:10:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"spokfpodkfdslkmcdskfmdskf"}
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."slug" = ? LIMIT ?[0m  [["slug", "spokfpodkfdslkmcdskfmdskf"], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_disqus.html.erb (1.0ms)
+  Rendered posts/show.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 310ms (Views: 264.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-02-11 01:10:44 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 258ms (Views: 229.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/this-will-paginate-the-pages" for 127.0.0.1 at 2017-02-11 01:10:46 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"this-will-paginate-the-pages"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "this-will-paginate-the-pages"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 235ms (Views: 210.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 01:10:50 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (69.1ms)
+Completed 200 OK in 412ms (Views: 399.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-11 01:10:51 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Av8+e3HGjDQBctx5aDthUusp5JOCOJhiiAJcb4546mBctD8z9dJ9eYPsL8y3/JcotUafT0iiC/vBW7oLvxc26A==", "user"=>{"email"=>"LjCraft12@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ljcraft12@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-11 06:10:52 UTC], ["last_sign_in_at", 2017-02-11 05:42:47 UTC], ["sign_in_count", 15], ["updated_at", 2017-02-11 06:10:52 UTC], ["id", 1]]
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 617ms (ActiveRecord: 22.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 01:10:52 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered welcome/index.html.erb within layouts/application (12.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 308ms (Views: 263.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-02-11 01:10:55 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 268ms (Views: 237.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/dsadsadsadsadsa" for 127.0.0.1 at 2017-02-11 01:10:58 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"dsadsadsadsadsa"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "dsadsadsadsadsa"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 269ms (Views: 228.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-02-11 01:11:03 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (15.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 311ms (Views: 277.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/this-will-paginate-the-pages" for 127.0.0.1 at 2017-02-11 01:11:05 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"this-will-paginate-the-pages"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "this-will-paginate-the-pages"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 257ms (Views: 218.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-02-11 01:11:32 -0500
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (15.6ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 301ms (Views: 255.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/nintendo-switch" for 127.0.0.1 at 2017-02-11 01:11:35 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"nintendo-switch"}
+  [1m[36mProject Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = ? LIMIT ?[0m  [["slug", "nintendo-switch"], ["LIMIT", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 296ms (Views: 250.3ms | ActiveRecord: 0.0ms)
+
+
