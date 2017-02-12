@@ -81,8 +81,8 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  config.action.mailer.default_url_options = { host: 'https://blooming-mountain-21199.herokuapp.com/'}
-  config.action.mailer.delivery_method = :smtp
+#   config.action.mailer.default_url_options = { host: 'https://blooming-mountain-21199.herokuapp.com/'}
+#   config.action.mailer.delivery_method = :smtp
 
 #   ActionMailer::Base.smtp_settings = {
 #       :address        => 'smtp.sendgrid.net',
