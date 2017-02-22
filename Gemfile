@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-
+ruby '2.3.3'
 gem 'rails', '~> 5.0.1'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -20,6 +20,9 @@ gem 'redcarpet', '~> 3.4'
 gem 'friendly_id', '~> 5.2'
 gem 'will_paginate', '~> 3.1.1'
 gem 'mail_form', '~> 1.6'
+gem 'sendgrid-ruby'
+gem 'devise', '~> 4.2'
+gem 'bcrypt', platforms: :ruby
 
 group :development, :test do
   gem 'byebug', platform: :mri

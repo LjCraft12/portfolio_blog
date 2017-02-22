@@ -9,7 +9,7 @@
       a {
         color: $dark;
         &:hover {
-          color: $hightlight;
+          color: $highlight;
         }
       }
     }
@@ -20,7 +20,7 @@
       a {
         color: $dark;
         &:hover {
-          color: $hightlight;
+          color: $highlight;
         }
       }
     }
@@ -63,9 +63,25 @@
     color: $dark;
     padding: 1em 1.5em;
     &:hover {
-      color: $hightlight;
+      color: $highlight;
       cursor: pointer;
     }
+  }
+}
+
+#user_links {
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
+  text-align: center;
+  padding: 1em 0;
+  margin: 3em 0;
+  a {
+    color: #2f4f4f;
+    margin: 0 1em 0 1em;
+    font-weight: 700;
+    font-size: .8em;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 }
 
@@ -96,12 +112,12 @@
     font-style: normal;
     color: $dark;
     &:hover {
-      background-color: $hightlight;
+      background-color: $highlight;
       color: $white;
     }
   }
   .current {
-    background: $hightlight;
+    background: $highlight;
     color: $white;
   }
   .disabled {

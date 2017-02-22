@@ -1,10 +1,11 @@
 @import "normalize";
 
 
+
 $border:     #E9E9E9;
 $dark:       #424652;
 $light:      #2f4f4f;
-$hightlight: #00BEFF;
+$highlight:  #00BEFF;
 $white:      #ffffff;
 
 * {
@@ -14,7 +15,7 @@ $white:      #ffffff;
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .wrapper {
@@ -88,7 +89,7 @@ hr {
     display: block;
     height: 2.5px;
     border: 0;
-    border-top: 2px solid $hightlight;
+    border-top: 2px solid $highlight;
     margin: 2rem 0;
 }
 
@@ -118,6 +119,17 @@ a {
 }
 }
 
+.alert, .notice {
+  padding:1em 0;
+  margin-top: 1em;
+  color: $dark;
+  text-align: center;
+  font-weight: 700;
+  font-size: .8em;
+  text-decoration: none;
+  border-bottom: 1.5px solid $border;
+}
+
 #page_title {
     text-align: center;
     border-bottom: 1px solid $border;
@@ -141,7 +153,7 @@ i {
     margin-left: 1em;
     padding-top: .2em;
 &:hover {
-     color: $hightlight;
+     color: $highlight;
  }
 }
 }
@@ -171,13 +183,13 @@ input[type="submit"], .button {
     padding: .8em 1.5em;
     margin-bottom: 1em;
 &:hover {
-     border: 2px solid $hightlight;
-     color: $hightlight;
+     border: 2px solid $highlight;
+     color: $highlight;
  }
 }
 
 .project_button {
-  background: $hightlight;
+  background: $highlight;
   color: $white;
   padding: 1em 2em;
   text-decoration: none;
@@ -186,6 +198,17 @@ input[type="submit"], .button {
 .button_wrapper {
   margin: 4em 0 0 0 ;
   text-align: center;
+}
+
+.new_user_sign_up {
+  color: red;
+}
+
+.create_article_post {
+  color: $dark;
+  padding: 0 0 1em 1em;
+  margin-bottom: 1em;
+  margin-left: 1.5em;
 }
 
 @import "welcome";

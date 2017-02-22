@@ -1,4 +1,4 @@
-<h1 id="page_title">Learning Resources</h1>
+<h1 id="page_title">Topics of my Interest</h1>
 
 <div id="post_wrapper" class="skinny_wrapper">
   <% @posts.each do |post| %>
@@ -9,5 +9,6 @@
   </div>
       <% end %>
 </div>
+<%= will_paginate @post %>
 
-<%= will_paginate @posts %>
+    <%=	link_to "Create new article", new_post_path, :class => "animated fadeIn create_article_post" %>

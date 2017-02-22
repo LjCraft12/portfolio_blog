@@ -1,5 +1,4 @@
 <h1 id="page_title">Projects I have worked on</h1>
-
 <div id="post_wrapper" class="skinny_wrapper">
   <% @projects.each do |project| %>
       <div class="post">
@@ -8,4 +7,7 @@
         <hr>
       </div>
   <% end %>
+  <%= will_paginate @project %>
+
+  <%= link_to "Create new projeject", new_project_path %>
 </div>
