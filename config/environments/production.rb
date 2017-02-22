@@ -84,16 +84,16 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action.mailer.default_url_options = { host: 'https://vast-caverns-53510.herokuapp.com'}
-  config.action.mailer.delivery_method = :smtp
-
-  ActionMailer::Base.smtp_settings = {
-      :address              => '',
-      :port                 => '',
-      :authentication       => :plain,
-      :user_name            => ENV['SENDGRID_USERNAME'],
-      :password             => ENV['SENDGRID_PASSWORD'],
-      :domain               => 'heroku.com',
-      :enable_starttls_auto => true
-  }
+  # config.action.mailer.default_url_options = { host: 'https://vast-caverns-53510.herokuapp.com'}
+  # config.action.mailer.delivery_method = :smtp
+  #
+  # ActionMailer::Base.smtp_settings = {
+  #     :address              => '',
+  #     :port                 => '',
+  #     :authentication       => :plain,
+  #     :user_name            => ENV['SENDGRID_USERNAME'],
+  #     :password             => ENV['SENDGRID_PASSWORD'],
+  #     :domain               => 'heroku.com',
+  #     :enable_starttls_auto => true
+  # }
 end
