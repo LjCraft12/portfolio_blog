@@ -18,7 +18,7 @@
   <nav>
     <%= link_to "Topics of Interest", posts_path %>
     <%= link_to "Projects", projects_path %>
-    <%= link_to "Contact Me", new_contact_path %>
+    <!--<%= link_to "Contact Me", contacts_path %>-->
     <% if user_signed_in? %>
           <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
     <% else %>
